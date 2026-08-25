@@ -275,6 +275,7 @@ jobs:
           github_access_token: ((github_access_token))
           env: dev
           secrets: ((sdp_((env))_secrets_tat_ui))
+          aws_role_arn: arn:aws:iam::((aws_account_sdp_dev)):role/sdp-concourse-dev
       - <<: *redeploy_api
         params:
           env: dev
@@ -341,6 +342,7 @@ jobs:
           github_access_token: ((github_access_token))
           env: prod
           secrets: ((sdp_prod_secrets_tat_ui))
+          aws_role_arn: arn:aws:iam::((aws_account_sdp_prod)):role/sdp-concourse-prod
       - <<: *redeploy_api
         params:
           env: prod
